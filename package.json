@@ -3,23 +3,21 @@
   "version": "0.0.0",
   "main": "lib/socketcoordinator.js",
   "description": "The best module ever.",
-  "homepage": "user/repo",
-  "bugs": "user/repo/issues",
+  "homepage": "https://github.com/williamfligor/socketCoordinator",
+  "bugs": "williamfligor/socketCoorinator/issues",
   "author": {
-    "name": "",
-    "email": ""
+    "name": "William Fligor"
   },
   "repository": {
     "type": "git",
-    "url": "user/repo"
+    "url": "williamfligor/socketCoordinator"
   },
   "license": "MIT",
   "files": [
     "lib"
   ],
   "keywords": [
-    "socketcoordinator",
-    ""
+    "socketcoordinator"
   ],
   "devDependencies": {
     "chai": "^1.9.2",
