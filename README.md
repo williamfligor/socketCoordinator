@@ -1,4 +1,4 @@
-#  [![Build Status](https://secure.travis-ci.org//socketcoordinator.png?branch=master)](http://travis-ci.org//socketcoordinator)
+#  [![Build Status](https://travis-ci.org/williamfligor/socketCoordinator.svg?branch=master)](https://travis-ci.org/williamfligor/socketCoordinator)
 
 > A module to use socket.io to connect a device meant to be controlled to a controller.
 
