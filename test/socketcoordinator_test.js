@@ -104,7 +104,7 @@ describe('socketcoordinator test', function() {
                 });
 
                 c4.on('cmd', function(data){
-                    data.should.equal('2')
+                    data.should.equal('2');
 
                     done();
                 });
