@@ -95,4 +95,23 @@ describe('socketcoordinator test', function() {
             c1.emit('cmd', '1');
         });
     });
+
+    it('two rooms cannot communicate', function(done) {
+        getConnectedPair(function(c1, c2){
+            getConnectedPair(function(c3, c4){
+                c2.on('cmd', function(data){
+                    data.should.equal('1');
+                });
+
+                c4.on('cmd', function(data){
+                    data.should.equal('2')
+
+                    done();
+                });
+
+                c1.emit('cmd', '1');
+                c3.emit('cmd', '2');
+            });
+        });
+    });
 });
