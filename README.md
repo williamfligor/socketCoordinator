@@ -27,7 +27,7 @@ Server
 ```js
 var app = require('http').createServer();
 
-var socketcoordinator = require('socketcoordinator')(app);
+var socketcoordinator = require('socketcoordinator').start(app);
 
 app.listen(3000);
 ```
