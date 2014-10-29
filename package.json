@@ -2,7 +2,7 @@
   "name": "socketcoordinator",
   "version": "0.0.0",
   "main": "lib/socketcoordinator.js",
-  "description": "The best module ever.",
+  "description": "A module to use socket.io to connect a device meant to be controlled to a controller.",
   "homepage": "https://github.com/williamfligor/socketCoordinator",
   "bugs": "williamfligor/socketCoorinator/issues",
   "author": {
