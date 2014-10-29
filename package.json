@@ -1,6 +1,6 @@
 {
   "name": "socketcoordinator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "lib/socketcoordinator.js",
   "description": "A module to use socket.io to connect a device meant to be controlled to a controller.",
   "homepage": "https://github.com/williamfligor/socketCoordinator",
