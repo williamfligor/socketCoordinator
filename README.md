@@ -38,7 +38,10 @@ Device Client
 
 var client = require('socket.io-client')('http://localhost:3000');
 
-client.emit('start', function(err, id){
+// use create if you have the ability to display the ID to the user
+// To use a hard coded ID (ie one that is printed on the device)
+// use .emit('start', hardCodedID, function()
+client.emit('create', function(err, id){
     if(err) throw err;
 
     console.log(id);

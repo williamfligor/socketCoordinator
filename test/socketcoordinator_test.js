@@ -46,7 +46,7 @@ describe('socketcoordinator test', function() {
                 ], acb);
             },
             function(acb){
-                io1.emit('start', function(err, id){
+                io1.emit('create', function(err, id){
                     expect(err).to.not.exist;
                     id.should.exist;
 
@@ -111,6 +111,22 @@ describe('socketcoordinator test', function() {
 
                 c1.emit('cmd', '1');
                 c3.emit('cmd', '2');
+            });
+        });
+    });
+
+    it('start with predefined id', function(done){
+        var ct1 = getConnection();
+        var ct2 = getConnection();
+
+        ct1.emit('start', 'abcd', function(){
+            ct2.emit('join', 'abcd', function(){
+                ct1.on('cmd', function(data){
+                    data.should.equal('1');
+                    done();
+                });
+
+                ct2.emit('cmd', '1');
             });
         });
     });
