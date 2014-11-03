@@ -47,14 +47,14 @@ client.emit('create', function(err, id){
     console.log(id);
 });
 
-client.on('cmd', function(command){
+client.on('message', function(command){
     // handle command from server
     console.log(command);
 });
 
 // Send data ever second to controlling device
 setInterval(function(){
-    socket.emit('cmd', 10);
+    socket.emit('message', 10);
 }, 1000);
 ```
 
@@ -71,14 +71,14 @@ var token = '1234'; // Token shown by device
 client.emit('join', function(err){
     if(err) throw err;
 
-    client.on('cmd', function(command){
+    client.on('message', function(command){
         // handle command from server
         console.log(command);
     });
 
-    // Send cmd ever second to device
+    // Send message ever second to device
     setInterval(function(){
-        socket.emit('cmd', {move: 10});
+        socket.emit('message', {move: 10});
     }, 1000);
 });
 ```

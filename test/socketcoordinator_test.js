@@ -87,30 +87,30 @@ describe('socketcoordinator test', function() {
 
     it('data transmission', function(done) {
         getConnectedPair(function(c1, c2){
-            c2.on('cmd', function(data){
+            c2.on('message', function(data){
                 data.should.equal('1');
                 done();
             });
 
-            c1.emit('cmd', '1');
+            c1.emit('message', '1');
         });
     });
 
     it('two rooms cannot communicate', function(done) {
         getConnectedPair(function(c1, c2){
             getConnectedPair(function(c3, c4){
-                c2.on('cmd', function(data){
+                c2.on('message', function(data){
                     data.should.equal('1');
                 });
 
-                c4.on('cmd', function(data){
+                c4.on('message', function(data){
                     data.should.equal('2');
 
                     done();
                 });
 
-                c1.emit('cmd', '1');
-                c3.emit('cmd', '2');
+                c1.emit('message', '1');
+                c3.emit('message', '2');
             });
         });
     });
@@ -121,12 +121,12 @@ describe('socketcoordinator test', function() {
 
         ct1.emit('start', 'abcd', function(){
             ct2.emit('join', 'abcd', function(){
-                ct1.on('cmd', function(data){
+                ct1.on('message', function(data){
                     data.should.equal('1');
                     done();
                 });
 
-                ct2.emit('cmd', '1');
+                ct2.emit('message', '1');
             });
         });
     });
